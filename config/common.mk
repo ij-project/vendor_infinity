@@ -203,8 +203,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
-    Updater
+    LineageSettingsProvider
 
 PRODUCT_COPY_FILES += \
     vendor/infinity/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -271,11 +270,6 @@ PRODUCT_COPY_FILES += \
 # Gapps
 ifeq ($(WITH_GAPPS),true)
 include vendor/google/gms/config.mk
-
-ifeq ($(INFINITY_BUILD_TYPE),OFFICIAL)
-PRODUCT_PACKAGES += \
-    UpdaterGMSOverlay
-endif
 endif
 
 # Openssh
